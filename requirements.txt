@@ -6,3 +6,4 @@ Pillow
 boto3
 whitenoise
 django-storages
+dj-database-url==0.5.0
