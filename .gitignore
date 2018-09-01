@@ -107,3 +107,4 @@ venv.bak/
 
 # IDE files
 /.idea
+settings_local.py
