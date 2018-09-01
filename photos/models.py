@@ -3,7 +3,7 @@ from django.db import models
 
 
 class PhotoUpload(models.Model):
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to='photos')
     user = models.ForeignKey(get_user_model())
     created = models.DateTimeField(auto_now_add=True)
 
@@ -12,4 +12,4 @@ class PhotoUpload(models.Model):
         verbose_name_plural = "Photo Uploads"
 
     def __str__(self):
-        return self.pk
+        return '{}'.format(self.pk)
