@@ -1,1 +1,1 @@
-web: gunicorn api_gunicorn.wsgi
+web: gunicorn api_photo_list.wsgi
