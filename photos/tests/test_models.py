@@ -16,7 +16,7 @@ class PhotoUploadTestCase(TestCase):
         obj = PhotoUpload.objects.create(photo=image, user=self.user)
 
         self.assertTrue(isinstance(obj, PhotoUpload))
-        self.assertEqual(obj.__str__(), obj.pk)
+        self.assertEqual(obj.__str__(), '{}'.format(obj.pk))
         self.assertTrue(obj.created)
         self.assertEqual(obj.user, self.user)
         self.assertEqual(obj.photo.name, image)

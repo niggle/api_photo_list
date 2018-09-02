@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'storages',
+    'rest_framework',
 
     'users',
     'photos'
@@ -121,5 +122,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
+# Heroku configs
 django_heroku.settings(locals())
 DATABASES['default'] = dj_database_url.config()

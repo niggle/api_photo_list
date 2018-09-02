@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.dispatch import receiver
 
 
 class PhotoUpload(models.Model):
@@ -13,3 +14,8 @@ class PhotoUpload(models.Model):
 
     def __str__(self):
         return '{}'.format(self.pk)
+
+
+@receiver(models.signals. pre_delete, sender=PhotoUpload, )
+def remove_file_from_s3(sender, instance, using, **kwargs):
+        instance.photo.delete(save=False)
