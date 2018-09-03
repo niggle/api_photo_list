@@ -15,3 +15,4 @@ class PhotoUploadListCreate(ListCreateAPIView):
     serializer_class = PhotoUploadSerializer
     http_method_names = ('get', 'post')
     parser_classes = (MultiPartParser,)
+    permission_classes = ()

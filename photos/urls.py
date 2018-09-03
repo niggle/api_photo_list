@@ -4,5 +4,4 @@ from photos.views import PhotoUploadListCreate
 
 urlpatterns = [
     url(r'^', PhotoUploadListCreate.as_view()),
-
 ]
