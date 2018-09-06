@@ -9,3 +9,4 @@ django-storages
 dj-database-url==0.5.0
 djangorestframework-jwt
 django-rest-auth[with_social]
+django-cors-headers

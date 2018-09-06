@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    'corsheaders',
 
     'storages',
     'rest_framework',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -149,3 +151,8 @@ REST_USE_JWT = True
 #     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 #     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300)
 # }
+
+CORS_ORIGIN_WHITELIST = (
+    'react-photo-list.herokuapp.com',
+
+)
