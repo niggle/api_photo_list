@@ -130,9 +130,7 @@ MEDIA_URL = 'https://%s/%s//' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# Heroku configs
-django_heroku.settings(locals())
-DATABASES['default'] = dj_database_url.config()
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -165,3 +163,10 @@ CORS_ORIGIN_WHITELIST = (
 
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_PORT = '2525'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+
+# Heroku configs
+django_heroku.settings(locals())
+DATABASES['default'] = dj_database_url.config()
+
