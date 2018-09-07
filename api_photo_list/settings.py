@@ -144,17 +144,22 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
 }
 
 REST_USE_JWT = True
 
-# JWT_AUTH = {
-#     'JWT_AUTH_HEADER_PREFIX': 'JWT',
-#     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300)
-# }
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30)
+}
 
 CORS_ORIGIN_WHITELIST = (
     'react-photo-list.herokuapp.com',
     '127.0.0.1:3000'
 
 )
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_PORT = '2525'
