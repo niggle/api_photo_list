@@ -16,3 +16,6 @@ class PhotoUploadListCreate(ListCreateAPIView):
     http_method_names = ('get', 'post')
     parser_classes = (MultiPartParser,)
 
+
+
+

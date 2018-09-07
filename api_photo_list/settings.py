@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
     'corsheaders',
+    'imagekit',
 
     'storages',
     'rest_framework',
@@ -154,5 +155,6 @@ REST_USE_JWT = True
 
 CORS_ORIGIN_WHITELIST = (
     'react-photo-list.herokuapp.com',
+    '127.0.0.1:3000'
 
 )
