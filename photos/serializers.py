@@ -14,5 +14,5 @@ class PhotoUploadSerializer(serializers.ModelSerializer):
         fields = ('photo', 'user', 'thumbnail')
 
     def get_thumbnail(self, obj):
-        return obj.image.url if obj.image.name else None
+        return obj.photo.url if obj.photo.name else None
 
